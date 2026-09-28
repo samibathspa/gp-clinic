@@ -1,0 +1,24 @@
+[
+  {
+    "id": "dr-khan",
+    "name": "Dr Aisha Khan",
+    "gender": "female",
+    "languages": ["English", "Urdu"],
+    "schedule": {
+      "mon": ["09:00", "17:00"], "tue": ["09:00", "17:00"], "wed": null,
+      "thu": ["09:00", "17:00"], "fri": ["09:00", "13:00"],
+      "sat": ["10:00", "14:00"], "sun": null
+    }
+  },
+  {
+    "id": "dr-evans",
+    "name": "Dr Tom Evans",
+    "gender": "male",
+    "languages": ["English"],
+    "schedule": {
+      "mon": ["08:00", "16:00"], "tue": null, "wed": ["08:00", "16:00"],
+      "thu": ["08:00", "16:00"], "fri": ["08:00", "16:00"],
+      "sat": null, "sun": ["10:00", "13:00"]
+    }
+  }
+]
