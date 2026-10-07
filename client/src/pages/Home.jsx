@@ -5,6 +5,24 @@ import { Link } from 'react-router-dom';
 import { sendGETRequest } from '../api.js';
 import { formatPrice } from '../utils/format.js';
 
+// Opening hours for each group of days, worked out from every doctor's schedule
+// (earliest start to latest finish), so the card always matches the real data.
+const HOUR_GROUPS = [
+  { label: 'Mon–Fri', days: ['mon', 'tue', 'wed', 'thu', 'fri'] },
+  { label: 'Saturday', days: ['sat'] },
+  { label: 'Sunday', days: ['sun'] },
+];
+
+function clinicHours(gps) {
+  return HOUR_GROUPS.map((group) => {
+    const shifts = gps.flatMap((gp) => group.days.map((d) => gp.schedule[d]).filter(Boolean));
+    if (!shifts.length) return { label: group.label, hours: 'Closed' };
+    const open = shifts.map((s) => s[0]).sort()[0];
+    const close = shifts.map((s) => s[1]).sort().at(-1);
+    return { label: group.label, hours: `${open}–${close}` };
+  });
+}
+
 const FEATURES = [
   { title: 'Seen within days', text: 'Same-week appointments, including early mornings and evenings.' },
   { title: 'Choose your GP', text: 'Pick a female or male doctor, or simply the first available.' },
@@ -13,10 +31,14 @@ const FEATURES = [
 
 export default function Home() {
   const [pricing, setPricing] = useState(null);
+  const [hours, setHours] = useState([]);
   const [error, setError] = useState('');
 
   // Load the price table from the server when the page opens
   useEffect(() => {
+    sendGETRequest('/api/gps')
+      .then((gps) => setHours(clinicHours(gps)))
+      .catch(() => setHours([]));
     sendGETRequest('/api/pricing')
       .then(setPricing)
       .catch((err) => setError(err.message));
@@ -37,14 +59,18 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero__card" aria-hidden="true">
+        <div className="hero__card">
           <p className="hero__card-label">Clinic hours</p>
           <p className="hero__card-time">Open 7 days</p>
-          <ul>
-            <li><span className="dot dot--ok" />Weekday 08:00–18:00</li>
-            <li><span className="dot dot--warn" />Evenings until 20:00</li>
-            <li><span className="dot dot--accent" />Saturday &amp; Sunday</li>
-          </ul>
+          <dl className="hero__hours">
+            {hours.map((row) => (
+              <div key={row.label}>
+                <dt>{row.label}</dt>
+                <dd>{row.hours}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="hero__card-note">Appointments before 08:00 or after 18:00 on weekdays are charged at the out-of-hours rate.</p>
         </div>
 
         <ul className="features">
