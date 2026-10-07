@@ -1,0 +1,34 @@
+[
+  {
+    "id": "standard",
+    "name": "Standard consultation",
+    "durationMins": 15,
+    "basePrice": 70,
+    "mode": "In person",
+    "description": "A face-to-face appointment for a single health concern."
+  },
+  {
+    "id": "extended",
+    "name": "Extended consultation",
+    "durationMins": 30,
+    "basePrice": 120,
+    "mode": "In person",
+    "description": "More time to discuss several concerns or a complex issue."
+  },
+  {
+    "id": "video",
+    "name": "Video consultation",
+    "durationMins": 15,
+    "basePrice": 55,
+    "mode": "Video call",
+    "description": "Speak to a GP from home. A link is sent after booking."
+  },
+  {
+    "id": "health-check",
+    "name": "Full health check",
+    "durationMins": 45,
+    "basePrice": 190,
+    "mode": "In person",
+    "description": "Blood pressure, BMI, blood tests and a lifestyle review."
+  }
+]

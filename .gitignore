@@ -3,3 +3,5 @@ dist/
 .env
 *.db
 .DS_Store
+# Bookings are created while the app runs; the server recreates this file if missing
+server/data/bookings.json

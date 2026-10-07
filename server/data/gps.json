@@ -4,21 +4,51 @@
     "name": "Dr Aisha Khan",
     "gender": "female",
     "languages": ["English", "Urdu"],
+    "interests": ["Women's health", "Family medicine"],
+    "bio": "Aisha has 12 years of general practice experience and a special interest in women's health.",
     "schedule": {
-      "mon": ["09:00", "17:00"], "tue": ["09:00", "17:00"], "wed": null,
-      "thu": ["09:00", "17:00"], "fri": ["09:00", "13:00"],
-      "sat": ["10:00", "14:00"], "sun": null
+      "mon": ["08:00", "18:00"], "tue": ["08:00", "20:00"], "wed": null,
+      "thu": ["08:00", "18:00"], "fri": ["08:00", "13:00"],
+      "sat": ["09:00", "13:00"], "sun": null
     }
   },
   {
     "id": "dr-evans",
     "name": "Dr Tom Evans",
     "gender": "male",
-    "languages": ["English"],
+    "languages": ["English", "Welsh"],
+    "interests": ["Sports injuries", "Men's health"],
+    "bio": "Tom offers early-morning appointments for patients who need to be seen before work.",
     "schedule": {
-      "mon": ["08:00", "16:00"], "tue": null, "wed": ["08:00", "16:00"],
-      "thu": ["08:00", "16:00"], "fri": ["08:00", "16:00"],
-      "sat": null, "sun": ["10:00", "13:00"]
+      "mon": ["07:00", "15:00"], "tue": null, "wed": ["07:00", "15:00"],
+      "thu": ["07:00", "15:00"], "fri": ["07:00", "15:00"],
+      "sat": null, "sun": ["10:00", "14:00"]
+    }
+  },
+  {
+    "id": "dr-okafor",
+    "name": "Dr Grace Okafor",
+    "gender": "female",
+    "languages": ["English", "Yoruba", "French"],
+    "interests": ["Mental health", "Travel medicine"],
+    "bio": "Grace runs our evening and weekend clinics and has a background in mental health.",
+    "schedule": {
+      "mon": null, "tue": null, "wed": ["12:00", "20:00"],
+      "thu": ["12:00", "20:00"], "fri": ["12:00", "20:00"],
+      "sat": ["10:00", "16:00"], "sun": ["10:00", "14:00"]
+    }
+  },
+  {
+    "id": "dr-patel",
+    "name": "Dr Raj Patel",
+    "gender": "male",
+    "languages": ["English", "Hindi", "Gujarati"],
+    "interests": ["Diabetes care", "Health checks"],
+    "bio": "Raj leads our health check service and supports patients with long-term conditions.",
+    "schedule": {
+      "mon": ["09:00", "17:00"], "tue": ["09:00", "17:00"], "wed": ["09:00", "17:00"],
+      "thu": ["09:00", "17:00"], "fri": ["09:00", "17:00"],
+      "sat": null, "sun": null
     }
   }
 ]

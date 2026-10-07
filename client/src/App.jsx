@@ -1,32 +1,31 @@
-// Root component: sets up page routes.
-// Scaffold generated with Claude (Anthropic).
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+// Root component: page layout and routes.
+// Generated with Claude (Anthropic).
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
+import Home from './pages/Home.jsx';
+import Doctors from './pages/Doctors.jsx';
+import Book from './pages/Book.jsx';
+import ManageBooking from './pages/ManageBooking.jsx';
+import NotFound from './pages/NotFound.jsx';
 
-function Home() {
-  const [status, setStatus] = useState('checking...');
-  useEffect(() => {
-    fetch('/api/health')
-      .then((r) => r.json())
-      .then((d) => setStatus(d.status))
-      .catch(() => setStatus('API not reachable'));
-  }, []);
-  return (
-    <main>
-      <h1>GP Clinic</h1>
-      <p>API status: {status}</p>
-    </main>
-  );
-}
-
-// TODO (you): create pages in src/pages/ (Doctors, Book, ManageBooking) and add routes below
 export default function App() {
   return (
     <BrowserRouter>
-      <nav><Link to="/">Home</Link></nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <a className="skip-link" href="#main">Skip to content</a>
+      <div className="app">
+        <Header />
+        <main id="main" className="app-main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/doctors" element={<Doctors />} />
+            <Route path="/book" element={<Book />} />
+            <Route path="/manage" element={<ManageBooking />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
