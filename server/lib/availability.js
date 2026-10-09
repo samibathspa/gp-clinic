@@ -1,5 +1,5 @@
 // Works out which appointment slots are free.
-// Generated with Claude (Anthropic). Prompt: "generate free time slots from each doctor's
+// Prompt: "generate free time slots from each doctor's
 // working hours, removing booked and past slots, supporting 'any doctor' and gender filters".
 import { toMinutes, toHHMM, dayKey } from './time.js';
 import { calculatePrice } from './pricing.js';
