@@ -1,5 +1,5 @@
 // Progress bar for the booking flow ("Step 2 of 4").
-// Generated with Claude (Anthropic).
+
 export default function StepIndicator({ steps, current, onStepClick }) {
   return (
     <nav className="steps" aria-label="Booking progress">
