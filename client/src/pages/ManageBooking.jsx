@@ -1,5 +1,4 @@
 // Look up a booking by reference + email, and cancel it.
-// Generated with Claude (Anthropic).
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { sendGETRequest, sendRequest } from '../api.js';
