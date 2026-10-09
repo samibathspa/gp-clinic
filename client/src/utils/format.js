@@ -1,5 +1,4 @@
 // Formatting helpers for prices, dates and doctor details.
-// Generated with Claude (Anthropic).
 
 export const formatPrice = (pounds) => `£${pounds}`;
 
