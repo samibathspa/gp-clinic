@@ -1,6 +1,5 @@
 // Booking flow: appointment type -> doctor -> date & time -> details -> confirmation.
 // Phones show one step at a time with a sticky price bar; desktops add a summary sidebar.
-// Generated with Claude (Anthropic). Prompt: "multi-step React booking flow that loads
 // availability from the API, groups slots by time of day and handles double-booking errors".
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
