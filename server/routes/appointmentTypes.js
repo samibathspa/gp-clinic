@@ -1,5 +1,5 @@
 // Routes for appointment types and the pricing rules.
-// Generated with Claude (Anthropic). Prompt: "GET routes returning appointment types
+// Prompt: "GET routes returning appointment types
 // and a price table for each pricing band".
 import { Router } from 'express';
 import { loadAppointmentTypes } from '../lib/data.js';
