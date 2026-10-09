@@ -49,6 +49,4 @@ server
 ## Notes
 All doctors and data are fictional. Do not enter real personal or health information.
 
-## Credits
-Code generated with the help of Claude (Anthropic); each file states this in its header comment.
-Font: Inter via @fontsource/inter.
+
