@@ -1,5 +1,4 @@
 // "Our GPs" page: list of doctors filtered on the server by gender and weekday/weekend.
-// Generated with Claude (Anthropic).
 import { useEffect, useState } from 'react';
 import { sendGETRequest } from '../api.js';
 import ChoiceGroup from '../components/ChoiceGroup.jsx';
