@@ -1,5 +1,4 @@
 // Site footer.
-// Generated with Claude (Anthropic).
 export default function Footer() {
   return (
     <footer className="site-footer">
