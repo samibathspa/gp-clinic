@@ -1,5 +1,5 @@
 // Time and date helpers shared by the routes.
-// Generated with Claude (Anthropic). Prompt: "write helpers to convert HH:MM times
+// Prompt: "write helpers to convert HH:MM times
 // to minutes and get the weekday key from a YYYY-MM-DD date".
 
 export const DAY_KEYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
