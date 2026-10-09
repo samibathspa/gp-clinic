@@ -1,5 +1,4 @@
 // Site header with navigation. On phones the links collapse into a menu button.
-// Generated with Claude (Anthropic).
 import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
