@@ -1,5 +1,4 @@
 // App entry point: loads fonts and global styles, then renders <App />.
-// Generated with Claude (Anthropic).
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import '@fontsource/inter/400.css';
