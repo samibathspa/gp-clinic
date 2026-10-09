@@ -1,5 +1,5 @@
 // A row of toggle buttons where one option is selected (used for filters).
-// Generated with Claude (Anthropic).
+
 export default function ChoiceGroup({ label, options, value, onChange, name }) {
   return (
     <fieldset className="choice-group">
