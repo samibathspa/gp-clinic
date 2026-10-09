@@ -10,6 +10,7 @@ import BookingSummary from '../components/BookingSummary.jsx';
 import ChoiceGroup from '../components/ChoiceGroup.jsx';
 import Avatar from '../components/Avatar.jsx';
 import { formatPrice, formatShortDate, formatLongDate, parseDate } from '../utils/format.js';
+import { isValidUkPhone } from '../utils/validate.js';
 
 const STEPS = ['Appointment', 'Doctor', 'Date & time', 'Your details'];
 const GENDER_OPTIONS = [
@@ -43,7 +44,7 @@ function validateDetails(d) {
   const errors = {};
   if (d.name.trim().length < 2) errors.name = 'Enter your full name';
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) errors.email = 'Enter a valid email address';
-  if (!/^[0-9 +()-]{7,20}$/.test(d.phone)) errors.phone = 'Enter a valid phone number';
+  if (!isValidUkPhone(d.phone)) errors.phone = 'Enter a UK phone number, e.g. 07700 900123';
   return errors;
 }
 
@@ -354,7 +355,7 @@ export default function Book() {
               {[
                 { id: 'name', label: 'Full name', type: 'text', autoComplete: 'name' },
                 { id: 'email', label: 'Email', type: 'email', autoComplete: 'email' },
-                { id: 'phone', label: 'Mobile number', type: 'tel', autoComplete: 'tel' },
+                { id: 'phone', label: 'Phone number', type: 'tel', autoComplete: 'tel', placeholder: '07700 900123' },
               ].map((f) => (
                 <div key={f.id} className={`field ${fieldErrors[f.id] ? 'field--error' : ''}`}>
                   <label htmlFor={f.id}>{f.label}</label>
@@ -362,6 +363,7 @@ export default function Book() {
                     id={f.id}
                     type={f.type}
                     autoComplete={f.autoComplete}
+                    placeholder={f.placeholder}
                     value={details[f.id]}
                     aria-invalid={Boolean(fieldErrors[f.id])}
                     aria-describedby={fieldErrors[f.id] ? `${f.id}-error` : undefined}

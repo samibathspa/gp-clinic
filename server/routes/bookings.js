@@ -8,10 +8,10 @@ import { loadGps, loadAppointmentTypes, loadBookings, saveBookings } from '../li
 import { freeSlotsForGp } from '../lib/availability.js';
 import { calculatePrice } from '../lib/pricing.js';
 import { isValidDateStr, daysFromToday } from '../lib/time.js';
+import { isValidUkPhone } from '../lib/validate.js';
 
 const router = Router();
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PHONE_RE = /^[0-9 +()-]{7,20}$/;
 
 // Short, readable reference such as "GP-7K2QXA"
 function makeReference() {
@@ -30,7 +30,7 @@ function validate(body) {
   if (!/^\d{2}:\d{2}$/.test(body.time || '')) errors.time = 'Choose a time';
   if (!p.name || p.name.trim().length < 2) errors.name = 'Enter your full name';
   if (!EMAIL_RE.test(p.email || '')) errors.email = 'Enter a valid email address';
-  if (!PHONE_RE.test(p.phone || '')) errors.phone = 'Enter a valid phone number';
+  if (!isValidUkPhone(p.phone)) errors.phone = 'Enter a UK phone number, e.g. 07700 900123';
   if (body.notes && body.notes.length > 500) errors.notes = 'Keep notes under 500 characters';
   return errors;
 }
