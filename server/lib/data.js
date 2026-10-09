@@ -1,5 +1,5 @@
 // Loads JSON data files and reads/writes bookings.
-// Generated with Claude (Anthropic). Prompt: "store bookings in a JSON file and load
+// Prompt: "store bookings in a JSON file and load
 // doctors and appointment types from JSON".
 // Synchronous file access is used on purpose: Node runs one request at a time, so
 // read -> check -> write cannot be interrupted by another booking (prevents double booking).
