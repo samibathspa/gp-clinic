@@ -1,5 +1,5 @@
 // Reusable functions for talking to the Express API.
-// Generated with Claude (Anthropic). Prompt: "reusable sendGETRequest and sendRequest
+// Prompt: "reusable sendGETRequest and sendRequest
 // helpers using fetch with async/await and error handling".
 
 // GET request -> parsed JSON. Throws an Error with the server's message on failure.
