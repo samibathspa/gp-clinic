@@ -1,5 +1,4 @@
 // Root component: page layout and routes.
-// Generated with Claude (Anthropic).
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
