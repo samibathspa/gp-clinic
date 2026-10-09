@@ -1,5 +1,5 @@
 // Pricing rules: the price depends on WHEN the appointment is.
-// Generated with Claude (Anthropic). Prompt: "write a pricing function where weekday
+// Prompt: "write a pricing function where weekday
 // standard hours are base price, weekday out-of-hours costs more, weekends cost most".
 // Prices are always calculated on the server so users can't change them in the browser.
 import { toMinutes, dayKey, isWeekendKey } from './time.js';
