@@ -1,5 +1,4 @@
 // Home page: introduction, key features and the live price list.
-// Generated with Claude (Anthropic).
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { sendGETRequest } from '../api.js';
