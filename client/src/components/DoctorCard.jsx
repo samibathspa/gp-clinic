@@ -1,5 +1,4 @@
 // Card showing one GP's details and weekly hours.
-// Generated with Claude (Anthropic).
 import { Link } from 'react-router-dom';
 import Avatar from './Avatar.jsx';
 import { DAYS, worksWeekends } from '../utils/format.js';
