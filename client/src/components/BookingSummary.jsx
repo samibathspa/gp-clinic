@@ -1,6 +1,5 @@
 // Summary of the current booking choices plus the main action button.
 // On phones this becomes a sticky bar at the bottom of the screen (see CSS).
-// Generated with Claude (Anthropic).
 import { formatPrice, formatShortDate } from '../utils/format.js';
 
 export default function BookingSummary({ type, gpLabel, date, slot, actionLabel, actionDisabled, onAction, busy }) {
